@@ -1,5 +1,5 @@
 var sequelize = require('sequelize');
-var db = new sequelize('db_test_api','root','root',{
+var db 		  = new sequelize('db_test_api','root','root',{
 	host:'localhost',
 	dialect:'mysql',
 	operatorsAliases: false

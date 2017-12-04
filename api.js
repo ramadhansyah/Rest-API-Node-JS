@@ -4,10 +4,7 @@ var app 		= express();
 app.use(bodyParse.urlencoded({ extended: true }))
 app.use(bodyParse.json())
 var db 			= require('./db').db;
-
-
-
-var userRouter = require('./userRouter');
+var userRouter  = require('./userRouter');
 var mahasiswaRouter = require('./mahasiswaRouter');
 app.use('/data',userRouter);
 app.use('/mahasiswa',mahasiswaRouter);
@@ -18,6 +15,6 @@ app.use('*',(req,res)=>{
 var server = app.listen(3101,()=>{
 	db.sync({force:false})
 	  .then(massage=>{
-	  	console.log('connection');
+	  	console.log('Koneksi Ke database berhasil');
 	  });
 });
